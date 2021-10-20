@@ -4,7 +4,7 @@ name: content-api
 on:
   push:
     branches:
-    - main
+    - master
     paths:
     - 'content-api/**'
 
@@ -14,9 +14,9 @@ on:
 # Environment variables are defined so that they can be used throughout the job definitions.
 env:
   imageRepository: 'content-api'
-  resourceGroupName: 'Fabmedical-[SHORT_SUFFIX]'
-  containerRegistryName: 'fabmedical[SHORT_SUFFIX]'
-  containerRegistry: 'fabmedical[SHORT_SUFFIX].azurecr.io'
+  resourceGroupName: 'fabmedical-[DeploymentID]'
+  containerRegistryName: 'acr[DeploymentID]'
+  containerRegistry: 'acr[DeploymentID].azurecr.io'
   dockerfilePath: './content-api'
   tag: '${{ github.run_id  }}'
 
